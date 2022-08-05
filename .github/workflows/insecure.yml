@@ -1,0 +1,19 @@
+name: InSecure Workflow
+
+on:
+  pull_request:
+    branches: 
+    - main
+
+permissions: read-all
+
+jobs:
+  Unsafe-Job:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - name: Checking downloaded repo unsafe
+      run: ls -a
