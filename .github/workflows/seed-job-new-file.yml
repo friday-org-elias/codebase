@@ -1,11 +1,6 @@
-name: Secure Workflow
-
-on:
-  pull_request_target:
-    branches: main
-
+name: Secure Workflowon:
+  workflow_call:
 permissions: read-all
-
 jobs:
   Safe-Job:
     name: Build and test
@@ -16,3 +11,4 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
     - name: New Seed Job File
       run: echo 'Hello from New Seed Job File'
+      
