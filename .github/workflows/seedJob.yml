@@ -16,6 +16,7 @@ jobs:
       run: ls -la
       
   call-seed-job:
+    needs: download-repo
     #if: github.event.review.state == 'approved' && github.event.review.body == 'Run seed job'
     # Update this path to test your workflow. ie. {owner}/{repo}/.github/workflows/seed-job-new-file.yml
     uses: ./.github/workflows/new-file.yml
