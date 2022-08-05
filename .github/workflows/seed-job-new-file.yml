@@ -1,9 +1,7 @@
 name: Seeded workflow
 
 on:
-  pull_request:
-    branches: 
-    - main
+  workflow_call:
 
 permissions: read-all
 
