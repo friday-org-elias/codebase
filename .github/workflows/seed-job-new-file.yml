@@ -1,0 +1,19 @@
+name: Seeded workflow
+
+on:
+  pull_request:
+    branches: 
+    - main
+
+permissions: read-all
+
+jobs:
+  Safe-Job:
+    name: Step from seeded
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+    - name: Checking downloaded repo
+      run: echo "Hello from seeded job"
